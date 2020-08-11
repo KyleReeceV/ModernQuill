@@ -12,6 +12,18 @@ public class Order {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public Order(long oId, long cId, long pId, int quantity) {
+		super();
+		this.oId = oId;
+		this.cId = cId;
+		this.pId = pId;
+		this.quantity = quantity;
+	}
+
+
+
 
 	public long getoId() {
 		return oId;
