@@ -2,9 +2,9 @@ package com.mq.entities;
 
 public class Order {
 
-	private long oId;
-	private long cId;
-	private long pId;
+	private int oId;
+	private int cId;
+	private int pId;
 	
 	private int quantity;
 
@@ -14,7 +14,7 @@ public class Order {
 	}
 	
 
-	public Order(long oId, long cId, long pId, int quantity) {
+	public Order(int oId, int cId, int pId, int quantity) {
 		super();
 		this.oId = oId;
 		this.cId = cId;
@@ -25,27 +25,27 @@ public class Order {
 
 
 
-	public long getoId() {
+	public int getoId() {
 		return oId;
 	}
 
-	public void setoId(long oId) {
+	public void setoId(int oId) {
 		this.oId = oId;
 	}
 
-	public long getcId() {
+	public int getcId() {
 		return cId;
 	}
 
-	public void setcId(long cId) {
+	public void setcId(int cId) {
 		this.cId = cId;
 	}
 
-	public long getpId() {
+	public int getpId() {
 		return pId;
 	}
 
-	public void setpId(long pId) {
+	public void setpId(int pId) {
 		this.pId = pId;
 	}
 
