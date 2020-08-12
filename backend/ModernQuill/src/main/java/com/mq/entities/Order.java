@@ -1,11 +1,29 @@
 package com.mq.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="cust_order")
 public class Order {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "o_id")
 	private int oId;
+	
+
+	@Column(name = "t_id")
 	private int cId;
+	
+	@Column(name = "p_id")
 	private int pId;
 	
+	@Column(name = "quantity")
 	private int quantity;
 
 	public Order() {
