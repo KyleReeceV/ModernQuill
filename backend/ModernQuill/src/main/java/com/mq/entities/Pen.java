@@ -1,12 +1,31 @@
 package com.mq.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="pen")
 public class Pen {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="p_id")
 	private int pId;
+	
+	@Column(name="description")
 	private String description;
-	private String name; 
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="cost")
 	private int cost;
+	
+	@Column(name="caption_image")
 	private String image;
 	
 	public Pen() {
