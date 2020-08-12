@@ -73,6 +73,12 @@ public class Customer {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [cId=" + cId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", password="
+				+ password + ", points=" + points + "]";
+	}
 	
 	
 	
