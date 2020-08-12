@@ -18,4 +18,9 @@ public class CustomerServiceImpl implements CustomerService {
 	public Customer getCustomerById(int id) {
 		return cr.findById(id).get();
 	}
+	
+	@Override
+	public Customer getCustomerByEmail(String email) {
+		return cr.findByEmail(email);
+	}
 }

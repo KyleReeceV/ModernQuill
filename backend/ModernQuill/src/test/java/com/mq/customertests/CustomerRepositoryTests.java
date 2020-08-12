@@ -23,5 +23,11 @@ class CustomerRepositoryTests {
 		Customer c = cr.findById(1).get();
 		Assertions.assertEquals("penguy37@gmail.com", c.getEmail());
 	}
+	
+	@Test
+	void getCustomerByEmail() {
+		Customer c = cr.findByEmail("penguy37@gmail.com");
+		Assertions.assertEquals(1, c.getEmail());
+	}
 
 }
