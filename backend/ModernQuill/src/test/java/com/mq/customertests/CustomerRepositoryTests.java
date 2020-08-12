@@ -5,13 +5,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.mq.app.ModernQuillApplication;
 import com.mq.entities.Customer;
 import com.mq.repositories.CustomerRepository;
 
 import javax.transaction.Transactional;
 
 
-@SpringBootTest
+@SpringBootTest(classes=ModernQuillApplication.class)
 @Transactional
 class CustomerRepositoryTests {
 
@@ -27,7 +28,7 @@ class CustomerRepositoryTests {
 	@Test
 	void getCustomerByEmail() {
 		Customer c = cr.findByEmail("penguy37@gmail.com");
-		Assertions.assertEquals(1, c.getEmail());
+		Assertions.assertEquals(1, c.getcId());
 	}
 
 }
