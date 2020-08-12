@@ -1,16 +1,40 @@
 package com.mq.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customer")
 public class Customer {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="c_id")
 	private int cId;
+	
+	@Column(name="firstname")
 	private String fname;
+	
+	@Column(name="lastname")
 	private String lname;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="password")
 	private String password;
 	
+	@Column(name="points")
 	private int points;
+	
+	@Column(name="address")
+	private String address;
 
-	public Customer(int cId, String fname, String lname, String email, String password, int points) {
+	public Customer(int cId, String fname, String lname, String email, String password, int points, String address) {
 		super();
 		this.cId = cId;
 		this.fname = fname;
@@ -18,19 +42,18 @@ public class Customer {
 		this.email = email;
 		this.password = password;
 		this.points = points;
+		this.address = address;
 	}
-	
-	
 
 	public Customer() {
 		super();
 	}
 
-	public int getC_id() {
+	public int getcId() {
 		return cId;
 	}
 
-	public void setC_id(int cId) {
+	public void setcId(int cId) {
 		this.cId = cId;
 	}
 
@@ -74,11 +97,20 @@ public class Customer {
 		this.points = points;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [cId=" + cId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", password="
-				+ password + ", points=" + points + "]";
+				+ password + ", points=" + points + ", address=" + address + "]";
 	}
+
 	
 	
 	
