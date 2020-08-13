@@ -10,4 +10,5 @@ import com.mq.entities.Order;
 @Repository 
 public interface OrderRepository extends CrudRepository<Order , Integer> {
 
+
 }

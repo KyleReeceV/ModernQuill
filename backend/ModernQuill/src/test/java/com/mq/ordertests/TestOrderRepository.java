@@ -1,4 +1,4 @@
-package com.mq.repositriestests;
+package com.mq.ordertests;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,7 +49,13 @@ class TestOrderRepository {
 	}
 
 	
-	
+//	@Test
+//	void testGetOrderById() {
+//		
+//		Order o = oRepo.findById(1).get();
+//		Assertions.assertEquals(1, o.getcId());
+//		System.out.println(o);
+//	}
 	
 }
 
