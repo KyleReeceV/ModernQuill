@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Pen} from '../models/pen'
+import { Pen } from '../../models/pen'
 
 @Component({
   selector: 'app-shop-page',
