@@ -1,13 +1,12 @@
 package com.mq.app;
 
-import org.junit.jupiter.api.Test;
+import javax.transaction.Transactional;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
+@Transactional
 class ModernQuillApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
 
 }
