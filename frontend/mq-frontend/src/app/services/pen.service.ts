@@ -14,4 +14,9 @@ export class PenService {
     const pens:Array<Pen> = await this.http.get<Array<Pen>>(`http://localhost:8080/pens/`).toPromise();
     return pens;
   }
+
+  async getPenById(id:number):Promise<Pen> {
+    const pen:Pen = await this.http.get<Pen>(`http://localhost:8080/pens/${id}`).toPromise();
+    return pen;
+  }
 }

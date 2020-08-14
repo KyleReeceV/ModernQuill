@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Pen } from '../../models/pen'
 import { PenService } from 'src/app/services/pen.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PenDialogComponent } from 'src/app/components/pen-dialog/pen-dialog.component'
+
 
 @Component({
   selector: 'app-shop-page',
@@ -9,7 +12,7 @@ import { PenService } from 'src/app/services/pen.service';
 })
 export class ShopPageComponent implements OnInit {
 
-  constructor(private penService:PenService) { }
+  constructor(private matDialog:MatDialog, private penService:PenService) { }
 
   ngOnInit(): void {
     this.displayPens();
@@ -19,7 +22,12 @@ export class ShopPageComponent implements OnInit {
 
   async displayPens():Promise<void>{
       this.pens = await this.penService.getAllPens();
-      console.log(".");
   };
+
+  openDialog(id:Number) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = id;
+    this.matDialog.open(PenDialogComponent, dialogConfig);
+  }
 
 }

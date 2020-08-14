@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -17,14 +17,16 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from '../app/components/login-page/login-page.component';
 import { ShopPageComponent } from '../app/components/shop-page/shop-page.component';
 import { CartPageComponent } from '../app/components/cart-page/cart-page.component';
-import { PenService } from 'src/app/services/pen.service'
+import { PenService } from 'src/app/services/pen.service';
+import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     ShopPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    PenDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { PenService } from 'src/app/services/pen.service'
     MatCardModule,
     MatSliderModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [ PenService ],
   bootstrap: [AppComponent]
