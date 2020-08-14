@@ -51,12 +51,12 @@ INSERT INTO customer VALUES(0, 'pengirl37@gmail.com', 'penvalley', '1200 Pen Cit
 INSERT INTO customer VALUES(0, 'normalguy12@gmail.com', 'strongpassword', '123 address', 'Normal', 'Guy', 3);
 INSERT INTO customer VALUES(0, 'penlord1@pen.com', 'pens4life', 'pen', 'Craig', 'Craigson', 2000000);
 
-INSERT INTO pen VALUES(0, 30, 'Nemosine Singularity', 'Demonstrator that comes with a cartridge convereter.', './static_images/nemosine_singularity.png');
-INSERT INTO pen VALUES(0, 5, 'Jinhao Shark Pen', 'Want to have a cool pen with a shark name? This one\'s for you', './static_images/jinhao_shark.png');
-INSERT INTO pen VALUES(0, 20, 'Pilot Metropolitan', 'This pen will make you feel really important', './static_images/pilot_metropolitam.png');
-INSERT INTO pen VALUES(0, 30, 'Lamy Safari', 'Beginner friendly pen to start off your collection right.', './static_images/lamy_safari.png');
-INSERT INTO pen VALUES(0, 200, 'Pilot Vanishing Point', 'This pen is a status symbol. You can\'t go wrong with a pen like this.', './static_images/pilot_vanishing_point.png');
-INSERT INTO pen VALUES(0, 7500000, 'Fulgor Nocturnus Tibaldi', 'You are actually crazy if you purchase this.', './static_images/tibaldi.png');
+INSERT INTO pen VALUES(0, 30, 'Nemosine Singularity', 'Demonstrator that comes with a cartridge convereter.', 'assets/img/nemosine_singularity.jpeg');
+INSERT INTO pen VALUES(0, 5, 'Jinhao Shark Pen', 'Want to have a cool pen with a shark name? This one\'s for you', 'assets/img/jinhao_shark.jpeg');
+INSERT INTO pen VALUES(0, 20, 'Pilot Metropolitan', 'This pen will make you feel really important', 'assets/img/pilot_metropolitam.jpeg');
+INSERT INTO pen VALUES(0, 30, 'Lamy Safari', 'Beginner friendly pen to start off your collection right.', 'assets/img/lamy_safari.jpeg');
+INSERT INTO pen VALUES(0, 200, 'Pilot Vanishing Point', 'This pen is a status symbol. You can\'t go wrong with a pen like this.', 'assets/img/pilot_vanishing_point.jpeg');
+INSERT INTO pen VALUES(0, 7500000, 'Fulgor Nocturnus Tibaldi', 'Please talk to an accountant before considering purcahse.', 'assets/img/tibaldi.jpeg');
 
 -- <img [src]={{ (result of api call > model).img_src }} />
 
