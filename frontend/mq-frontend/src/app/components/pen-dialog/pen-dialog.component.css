@@ -1,0 +1,22 @@
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width:550px;
+    height:400px;
+}
+
+#pointcost {
+    text-align: center;
+    font-size: 150%;
+    color:green;
+    height: 30px;
+}
+#costdesc {
+    text-align: center;
+}
+
+#closebtn {
+    float:left;
+}
