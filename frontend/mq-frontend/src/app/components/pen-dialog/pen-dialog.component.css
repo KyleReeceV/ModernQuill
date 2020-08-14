@@ -18,5 +18,18 @@
 }
 
 #closebtn {
+    width:49%;
     float:left;
+}
+
+#cartbtn {
+    width:49%;
+    float:right;
+}
+
+mat-dialog-actions {
+    border-radius: 25px;
+    background: linear-gradient(to left, #ece9e6, #ffffff); 
+    margin-bottom:10px;
+    padding-right: 8px;
 }

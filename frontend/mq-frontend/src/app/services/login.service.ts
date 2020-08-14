@@ -8,12 +8,12 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  async createBook(book:Book):Promise<Book>{
-    // second parameter is the body
-    // it takes in an object it will automatically 
-    // turn it into a json when sent
-    book = await this.http.post<Book>("http://localhost:7000/books",book).toPromise();
-    return book;
-  }
+  // async createBook(book:Book):Promise<Book>{
+  //   // second parameter is the body
+  //   // it takes in an object it will automatically 
+  //   // turn it into a json when sent
+  //   book = await this.http.post<Book>("http://localhost:7000/books",book).toPromise();
+  //   return book;
+  // }
 
 }
