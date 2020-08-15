@@ -39,27 +39,29 @@ class TestOrderService {
 		SimpleDateFormat dateTimeInCST = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//Setting the time zone
 		dateTimeInCST.setTimeZone(TimeZone.getTimeZone("CST"));
-		Order or= new Order (0, 1, 1, 4,dateTimeInCST.format(new Date()) );
+		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()) );
 		
 		Assertions.assertNotEquals(0, oServ.createOrder(or).getoId());
-		System.out.println(or);
+		System.out.println();
 	}
+
 	
 	@ParameterizedTest
-	@CsvSource({"1, 5"})
+	@CsvSource({"1, 2"})
 	void testFindBycId(int id, int size) {
 		
-		Set<Order> orders = oServ.getAllOrdersByCustomerId(id);
+		Set<Order> orders = oServ.getAllOrdersByCustomerId(1);
 		Assertions.assertEquals(size, orders.size());
 		System.out.println(orders);
 	}
 	
 	@ParameterizedTest
-	@CsvSource({"1, 4"})
-	void testfindById(int id, int quantity) {
+	@CsvSource({"3, 3, 1", "1, 1, 1"})
+	void testfindById(int oid, int cartId, int cId) {
 		
-		Order o = oServ.getById(id);
-		Assertions.assertEquals(quantity, o.getQuantity());
+		Order o = oServ.getById(oid);
+		Assertions.assertEquals(cartId, o.getCartId());
+		Assertions.assertEquals(cId, o.getcId());
 		System.out.println(o);
 	}
 	

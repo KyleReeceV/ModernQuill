@@ -35,9 +35,6 @@ class TestOrderRepository {
 //	void tearDown() throws Exception {
 //	}
 
-
-//	@Autowired
-//	OrderRepository oRepo;
 	
 	@Test
 	@Rollback
@@ -45,7 +42,7 @@ class TestOrderRepository {
 		SimpleDateFormat dateTimeInCST = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//Setting the time zone
 		dateTimeInCST.setTimeZone(TimeZone.getTimeZone("CST"));
-		Order or= new Order (0, 1, 1, 4,dateTimeInCST.format(new Date()) );
+		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()) );
 		
 		Assertions.assertNotEquals(0, oRepo.save(or).getoId());
 		System.out.println();
@@ -53,7 +50,7 @@ class TestOrderRepository {
 
 	
 	@ParameterizedTest
-	@CsvSource({"1, 5"})
+	@CsvSource({"1, 2"})
 	void testFindBycId(int id, int size) {
 		
 		Set<Order> orders = oRepo.findBycId(1);
@@ -62,14 +59,14 @@ class TestOrderRepository {
 	}
 	
 	@ParameterizedTest
-	@CsvSource({"1, 4"})
-	void testfindById(int id, int quantity) {
+	@CsvSource({"3, 3, 1", "1, 1, 1"})
+	void testfindById(int oid, int cartId, int cId) {
 		
-		Order o = oRepo.findById(id).get();
-		Assertions.assertEquals(quantity, o.getQuantity());
+		Order o = oRepo.findById(oid).get();
+		Assertions.assertEquals(cartId, o.getCartId());
+		Assertions.assertEquals(cId, o.getcId());
 		System.out.println(o);
 	}
-	
 	
 }
 

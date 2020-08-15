@@ -1,14 +1,11 @@
 package com.mq.entities;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name ="cust_order")
@@ -20,15 +17,11 @@ public class Order {
 	private int oId;
 	
 
+	@Column(name = "cart_id")
+	private int cartId;
+	
 	@Column(name = "c_id")
 	private int cId;
-	
-	@Column(name = "p_id")
-	private int pId;
-	
-	@Column(name = "quantity")
-	private int quantity;
-
 
 	@Column (name = "order_date")
 	private String orderDate;
@@ -38,15 +31,16 @@ public class Order {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 
-	public Order(int oId, int cId, int pId, int quantity, String datetime) {
+
+
+
+	public Order(int oId, int cartId, int cId, String orderDate) {
 		super();
 		this.oId = oId;
+		this.cartId = cartId;
 		this.cId = cId;
-		this.pId = pId;
-		this.quantity = quantity;
-		this.orderDate = datetime;
+		this.orderDate = orderDate;
 	}
 
 
@@ -56,33 +50,31 @@ public class Order {
 		return oId;
 	}
 
+
 	public void setoId(int oId) {
 		this.oId = oId;
 	}
+
+
+	public int getCartId() {
+		return cartId;
+	}
+
+
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
+
 
 	public int getcId() {
 		return cId;
 	}
 
+
 	public void setcId(int cId) {
 		this.cId = cId;
 	}
 
-	public int getpId() {
-		return pId;
-	}
-
-	public void setpId(int pId) {
-		this.pId = pId;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 
 	public String getOrderDate() {
 		return orderDate;
@@ -96,12 +88,12 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [oId=" + oId + ", cId=" + cId + ", pId=" + pId + ", quantity=" + quantity + ", orderDate="
-				+ orderDate + "]";
+		return "Order [oId=" + oId + ", cartId=" + cartId + ", cId=" + cId + ", orderDate=" + orderDate + "]";
 	}
 
 
 
 	
-	
 }
+
+	

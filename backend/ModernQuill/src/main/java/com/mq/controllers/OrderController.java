@@ -30,9 +30,9 @@ public class OrderController {
 	}
 	
 	@RequestMapping (value = "/orders/{oid}", method =  RequestMethod.GET)
-	public Order getOrderById(@PathVariable Integer id) {
+	public Order getOrderById(@PathVariable Integer oid) {
 		
-		return oServ.getById(id);
+		return oServ.getById(oid);
 	}
 	
 	@RequestMapping (value = "/customers/{cid}/orders", method =  RequestMethod.GET)
