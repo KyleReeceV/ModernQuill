@@ -20,9 +20,8 @@ public class CartController {
 	CartService cServ;
 	
 	@PostMapping ("/carts")
-	public Cart createCart(@RequestBody Cart cart) {
-		System.out.println(cart);
-		return cServ.createCart(cart);
+	public Set<Cart> createCart(@RequestBody Set<Cart> allNewCarts) {
+		return cServ.createAllCarts(allNewCarts);
 	}
 	
 	//Set <Cart> getAllByCartId(int cartId);

@@ -1,10 +1,12 @@
 package com.mq.carttests;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +34,34 @@ class TestCartService {
 	
 	
 
-	@ParameterizedTest
-	@CsvSource({"2,1,5,20"})
+//	@ParameterizedTest
+//	@CsvSource({"2,1,5,20"})
+//	@Rollback
+//	void testCreateCart(int cartId, int cId, int pId, int quantity) {
+//	Cart cart= new Cart(cartId, cId, pId, quantity);
+//		
+//		Assertions.assertDoesNotThrow(()->{
+//					Cart cartReturned=cs.createCart(cart);
+//					Assertions.assertNotNull(cartReturned);
+//					System.out.println(cartReturned);	
+//				});
+//		
+//	}
+	
+	@Test
 	@Rollback
-	void testCreateCart(int cartId, int cId, int pId, int quantity) {
-	Cart cart= new Cart(cartId, cId, pId, quantity);
+	void testCreateAllCarts() {
+	Cart cart= new Cart(10,4,6, 100);
+	Cart cart2= new Cart(10,4,5,2000);
+	Set<Cart> cartSet= new HashSet<>();
+	cartSet.add(cart); 
+	cartSet.add(cart2);
 		
-		Assertions.assertDoesNotThrow(()->{
-					Cart cartReturned=cs.createCart(cart);
-					System.out.println(cartReturned);
-				});
+	Assertions.assertDoesNotThrow(()->{
+				Set<Cart> cartsReturned=cs.createAllCarts(cartSet);
+				Assertions.assertNotNull(cartsReturned);
+				System.out.println(cartSet);
+			});
 	}
 
 	@ParameterizedTest
