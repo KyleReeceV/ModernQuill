@@ -18,7 +18,10 @@ import { LoginPageComponent } from '../app/components/login-page/login-page.comp
 import { ShopPageComponent } from '../app/components/shop-page/shop-page.component';
 import { CartPageComponent } from '../app/components/cart-page/cart-page.component';
 import { PenService } from 'src/app/services/pen.service';
-import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component'
+import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component';
+import { TestHttpReqForOrderAndCartComponent } from './components/test-http-req-for-order-and-cart/test-http-req-for-order-and-cart.component';
+
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component
     LoginPageComponent,
     ShopPageComponent,
     CartPageComponent,
-    PenDialogComponent
+    PenDialogComponent,
+    TestHttpReqForOrderAndCartComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component
     MatGridListModule,
     MatDialogModule
   ],
-  providers: [ PenService ],
+  providers: [ PenService , DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
