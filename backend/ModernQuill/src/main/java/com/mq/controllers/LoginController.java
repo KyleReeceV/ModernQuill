@@ -23,15 +23,19 @@ public class LoginController {
 
 	@RequestMapping(value="/login",method= RequestMethod.POST)
 	public Customer login(@RequestBody(required = true) Customer  customer) {
+		Customer cust;
 		
-		Customer cust = cs.getCustomerByEmail(customer.getEmail());
 		
-		if(cust.getPassword().equals(customer.getPassword())) {
-			return cust;
+		try {
+			cust = cs.getCustomerByEmail(customer.getEmail());
+			
+			if(cust.getPassword().equals(customer.getPassword())) {
+				return cust;
+			}	
+		}catch(Exception e) {
+			cust = null;
 		}
-		else {
-			return null;
-		}
+		return cust;
 	}
 	
 }
