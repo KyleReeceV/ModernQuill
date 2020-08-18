@@ -16,11 +16,11 @@ public interface CartRepository extends CrudRepository<Cart, CartPK>{
 		 this cart doesn't have carts, it has cart items so more than one record share the same cart_id
 		 the number of records that share the same cart id corresponds to the number of items the 
 		 customer purchase if the customer purchased 3 items, there will be 3 records that have the same
-		 cart it.
+		 cart id.
 	*/
 	Set<Cart> findBycartId(Integer cartId);
 	
-	Cart findTopByOrderByCartIdDesc();  //you should capitalize the first letter of your proerty id;
+	Cart findTopByOrderByCartIdDesc();  //you should capitalize the first letter of your property id;
 	
 	
 }
