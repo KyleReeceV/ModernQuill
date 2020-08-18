@@ -16,7 +16,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule, MatList} from '@angular/material/list'
 
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from '../app/components/login-page/login-page.component';
@@ -25,10 +24,11 @@ import { CartPageComponent } from '../app/components/cart-page/cart-page.compone
 import { PenService } from 'src/app/services/pen.service';
 import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component';
 import { TestHttpReqForOrderAndCartComponent } from './components/test-http-req-for-order-and-cart/test-http-req-for-order-and-cart.component';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-
 
 import { DatePipe } from '@angular/common';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NavigtationBarComponent } from './components/navigtation-bar/navigtation-bar.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +38,10 @@ import { DatePipe } from '@angular/common';
     CartPageComponent,
     PenDialogComponent,
     TestHttpReqForOrderAndCartComponent,
-     NavigationBarComponent,
-
+    LogoutComponent,
+    NavigtationBarComponent,
+    OrderComponent,
+  
   ],
   imports: [
     BrowserModule,

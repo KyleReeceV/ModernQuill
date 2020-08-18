@@ -2,31 +2,19 @@ body {
     background: #ff9966; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ff9966, #ff5e62); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ff9966, #ff5e62);
+    text-align:center;
 }
 
-.inputdiv{
-    margin-top: 12%;
+
+
+.example-form {
+    display: inline-block;
+    max-width:500px;
+
 }
 
-input[type=text], input[type=password] {
-    width: 25%;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
-    border: none;
-    background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-.slider {
-    text-align: center;
+.example-full-width {
+    width:100%;
 }
 
 h1 { color: skyblue; 
@@ -36,4 +24,5 @@ h1 { color: skyblue;
     margin-bottom: 0px; 
     /* margin-top: 40px;  */
     text-align: center; 
-    text-shadow: 0 1px 1px #fff; }
+    text-shadow: 0 1px 1px #fff; 
+}

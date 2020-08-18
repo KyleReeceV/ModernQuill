@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../models/customer';
+import { Component, OnInit} from '@angular/core';
 import {LoginService} from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 
@@ -20,15 +19,12 @@ export class LoginPageComponent implements OnInit {
   }
 
   async loginCust(){
-    console.log(this.userField);
-
-    let cust = new Customer(this.userField,this.passField);
-    let customer = await this.loginService.loginUser(cust);
-    // console.log(customer);
-
+    let dto = {email: this.userField, password: this.passField};
+    console.log(dto);
+    let customer = await this.loginService.loginUser(dto);
+    console.log(customer)
     if (customer === null){
       alert("user not found")
-      this.router.navigateByUrl("/login");
       this.userField="";
       this.passField="";
       this.router.navigateByUrl("/login");
@@ -37,7 +33,6 @@ export class LoginPageComponent implements OnInit {
     else{
       this.router.navigateByUrl("/shop");
       this.loginService.setCustomer(customer);
-      console.log(this.loginService.currCust)
     }
 
 

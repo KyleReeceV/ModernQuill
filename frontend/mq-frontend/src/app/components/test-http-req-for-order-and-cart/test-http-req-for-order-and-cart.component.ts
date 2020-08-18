@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from '../../services/cart.service';
 import {OrderService} from '../../services/order.service';
-import {Cart} from '../../models/Cart';
+import {Cart} from 'src/app/models/cart';
 import {Order} from '../../models/Order';
 import { DatePipe } from '@angular/common';
 
@@ -19,13 +19,13 @@ export class TestHttpReqForOrderAndCartComponent implements OnInit {
 
   //Cart Service
 
-  async createCarts ():Promise<void> {
-    let cartArray:Array<Cart> = new Array<Cart>();
+  async createCarts():Promise<void> {
+    // let cartArray:Array<Cart> = new Array<Cart>();
 
-    cartArray.push(new Cart(5,2,3,20), new Cart(5,2,4,33), new Cart(5,2,1,17));
-    const returnedCarts: Array<Cart> = await this.cs.createAllCartItems(cartArray);
+    // cartArray.push(new Cart(5,2,3,20), new Cart(5,2,4,33), new Cart(5,2,1,17));
+    // const returnedCarts: Array<Cart> = await this.cs.createAllCartItems(cartArray);
 
-    console.log (returnedCarts) ;
+    // console.log (returnedCarts) ;
   }
 
   async getAllCartItemsByCartId(): Promise<void>{
