@@ -27,8 +27,11 @@ export class OrderComponent implements OnInit {
     let date: string = this.datePipe.transform(new Date(), 'yyyy-MM-dd hh-mm-ss');
     let cartID = this.data.cartId;
     let custID = this.data.custId;
+    let orderTotal = this.data.cost;
 
-    const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date));
+    console.log(orderTotal)
+
+    const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
 
     
     console.log(returnedOrder);
