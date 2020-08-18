@@ -23,4 +23,9 @@ public class CustomerServiceImpl implements CustomerService {
 	public Customer getCustomerByEmail(String email) {
 		return cr.findByEmail(email);
 	}
+
+	@Override
+	public Customer updateCustomer(Customer customer) {
+		return cr.save(customer);
+	}
 }
