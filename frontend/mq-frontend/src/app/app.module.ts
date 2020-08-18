@@ -9,6 +9,11 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from  '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule, MatList} from '@angular/material/list'
 
 
 
@@ -20,6 +25,8 @@ import { CartPageComponent } from '../app/components/cart-page/cart-page.compone
 import { PenService } from 'src/app/services/pen.service';
 import { PenDialogComponent } from './components/pen-dialog/pen-dialog.component';
 import { TestHttpReqForOrderAndCartComponent } from './components/test-http-req-for-order-and-cart/test-http-req-for-order-and-cart.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+
 
 import { DatePipe } from '@angular/common';
 
@@ -31,7 +38,8 @@ import { DatePipe } from '@angular/common';
     CartPageComponent,
     PenDialogComponent,
     TestHttpReqForOrderAndCartComponent,
-  
+     NavigationBarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,12 @@ import { DatePipe } from '@angular/common';
     MatSliderModule,
     MatInputModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [ PenService , DatePipe],
   bootstrap: [AppComponent]
