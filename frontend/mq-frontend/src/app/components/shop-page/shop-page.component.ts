@@ -3,6 +3,10 @@ import { Pen } from '../../models/pen'
 import { PenService } from 'src/app/services/pen.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PenDialogComponent } from 'src/app/components/pen-dialog/pen-dialog.component'
+import { LoginService } from 'src/app/services/login.service';
+import { Customer } from 'src/app/models/customer';
+import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,13 +16,21 @@ import { PenDialogComponent } from 'src/app/components/pen-dialog/pen-dialog.com
 })
 export class ShopPageComponent implements OnInit {
 
-  constructor(private matDialog:MatDialog, private penService:PenService) { }
+  constructor(private matDialog:MatDialog,
+              private penService:PenService, 
+              private loginService:LoginService, 
+              private cartService:CartService,
+              private router:Router) { }
 
   ngOnInit(): void {
+    this.custLoggedIn();
     this.displayPens();
+    this.getCustomerById();
   }
 
   pens:Array<Pen> = [];
+
+  curCustomer:Customer;
 
   async displayPens():Promise<void>{
       this.pens = await this.penService.getAllPens();
@@ -30,4 +42,16 @@ export class ShopPageComponent implements OnInit {
     this.matDialog.open(PenDialogComponent, dialogConfig);
   }
 
+  async getCustomerById() {
+    let str = localStorage.getItem('customer')
+    let num = parseInt(str);
+    this.curCustomer = await this.loginService.getCustomerById(num);
+  }
+
+  custLoggedIn(){
+    if(!this.loginService.isLoggedIn()) {
+      //alert("You must be logged in to view this page!");
+      this.router.navigateByUrl("/login");
+    }
+  }
 }

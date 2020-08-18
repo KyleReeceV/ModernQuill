@@ -1,0 +1,28 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div *ngIf="custLoggedIn()">
+    <mat-tab-group id="nav-bar">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/shop'" class="tab-icons"> <mat-icon>home</mat-icon>Home </a>
+            </ng-template>
+        </mat-tab>
+        
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/cart'"class="tab-icons"><mat-icon >shopping_cart </mat-icon>Cart </a>
+            </ng-template>
+        </mat-tab>
+        
+        <mat-tab> 
+            <ng-template mat-tab-label>
+                <a mat-button  [routerLink]="'/logout'" (click)="isLoggedIn()" class="tab-icons"> <mat-icon>exit_to_app</mat-icon>Logout </a>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+
+<br />
