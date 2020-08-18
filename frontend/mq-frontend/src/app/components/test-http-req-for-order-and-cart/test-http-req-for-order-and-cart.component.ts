@@ -45,8 +45,8 @@ export class TestHttpReqForOrderAndCartComponent implements OnInit {
 
     let date: string = this.datePipe.transform(new Date(), 'yyyy-MM-dd hh-mm-ss');
 
-    const returnedOrder: Order = await this.os.createOrder(new Order(0, 5,2, date));
-    console.log(returnedOrder);
+    // const returnedOrder: Order = await this.os.createOrder(new Order(0, 5,2, date));
+    // console.log(returnedOrder);
   }
 
   async getOrderById(): Promise<void>{

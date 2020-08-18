@@ -29,6 +29,7 @@ import { DatePipe } from '@angular/common';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NavigtationBarComponent } from './components/navigtation-bar/navigtation-bar.component';
 import { OrderComponent } from './components/order/order.component';
+import { OrderPageComponent } from '../app/components/order-page/order-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { OrderComponent } from './components/order/order.component';
     LogoutComponent,
     NavigtationBarComponent,
     OrderComponent,
+    OrderPageComponent,
   
   ],
   imports: [
