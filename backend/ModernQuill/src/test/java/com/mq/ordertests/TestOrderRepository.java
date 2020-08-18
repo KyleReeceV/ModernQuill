@@ -42,7 +42,7 @@ class TestOrderRepository {
 		SimpleDateFormat dateTimeInCST = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		//Setting the time zone
 		dateTimeInCST.setTimeZone(TimeZone.getTimeZone("CST"));
-		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()) );
+		Order or= new Order (0, 10, 2, dateTimeInCST.format(new Date()), 1000 );
 		
 		Assertions.assertNotEquals(0, oRepo.save(or).getoId());
 		System.out.println();
