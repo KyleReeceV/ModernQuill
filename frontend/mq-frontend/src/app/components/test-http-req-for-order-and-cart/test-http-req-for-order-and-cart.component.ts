@@ -4,6 +4,7 @@ import {OrderService} from '../../services/order.service';
 import {Cart} from 'src/app/models/cart';
 import {Order} from '../../models/Order';
 import { DatePipe } from '@angular/common';
+import { Pen } from 'src/app/models/pen';
 
 @Component({
   selector: 'app-test-http-req-for-order-and-cart',
@@ -19,13 +20,14 @@ export class TestHttpReqForOrderAndCartComponent implements OnInit {
 
   //Cart Service
 
+  pen:Pen = null;
   async createCarts():Promise<void> {
-    // let cartArray:Array<Cart> = new Array<Cart>();
+    let cartArray:Array<Cart> = new Array<Cart>();
 
-    // cartArray.push(new Cart(5,2,3,20), new Cart(5,2,4,33), new Cart(5,2,1,17));
-    // const returnedCarts: Array<Cart> = await this.cs.createAllCartItems(cartArray);
+    cartArray.push(new Cart(5,2,3,20,this.pen), new Cart(5,2,4,33,this.pen), new Cart(5,2,1,17,this.pen));
+    const returnedCarts: Array<Cart> = await this.cs.createAllCartItems(cartArray);
 
-    // console.log (returnedCarts) ;
+    console.log (returnedCarts) ;
   }
 
   async getAllCartItemsByCartId(): Promise<void>{
@@ -45,8 +47,8 @@ export class TestHttpReqForOrderAndCartComponent implements OnInit {
 
     let date: string = this.datePipe.transform(new Date(), 'yyyy-MM-dd hh-mm-ss');
 
-    const returnedOrder: Order = await this.os.createOrder(new Order(0, 5,2, date));
-    console.log(returnedOrder);
+    // const returnedOrder: Order = await this.os.createOrder(new Order(0, 5,2, date));
+    // console.log(returnedOrder);
   }
 
   async getOrderById(): Promise<void>{

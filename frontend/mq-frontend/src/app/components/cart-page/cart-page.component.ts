@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { OrderComponent } from 'src/app/components/order/order.component';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { ShopToCartService } from 'src/app/services/shop-to-cart.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -19,10 +20,10 @@ export class CartPageComponent implements OnInit {
               private penService:PenService,
               private router:Router,
               private loginService:LoginService,
+              private stc:ShopToCartService,
               private matDialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.getCurCartID();
     this.getAllCartItemsByCartId();
     this.custLoggedIn();
   }
@@ -39,16 +40,9 @@ export class CartPageComponent implements OnInit {
 
   totalCost:number;
 
-  async getCurCartID() {
-    let curCartID = await this.cartService.getLastElementId() + 1;
-    localStorage.setItem('nCartID', String(curCartID));
-    console.log(localStorage.getItem('nCartID'));
-
-  }
-
   async getAllCartItemsByCartId(): Promise<void>{
-    let cartID = parseInt(localStorage.getItem('nCartID'));
-    const returnedCarts: Array<Cart> = await this.cartService.getAllCartsByCartId(cartID);    
+    const returnedCarts: Array<Cart> = this.stc.courier;
+    console.log(returnedCarts);
     let cost:number = 0;
 
     for(let i = 0; i < returnedCarts.length; i++) {
@@ -67,9 +61,10 @@ export class CartPageComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  async openDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {cost: this.totalCost, cartId: parseInt(localStorage.getItem('nCartID')), custId: 1};
+    let cartID = await this.cartService.getLastElementId() + 1;
+    dialogConfig.data = {cost: this.totalCost, cartId: cartID, custId: 1};
     this.matDialog.open(OrderComponent, dialogConfig);
   }
 }
