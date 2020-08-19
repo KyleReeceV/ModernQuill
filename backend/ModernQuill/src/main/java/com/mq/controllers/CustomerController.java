@@ -3,7 +3,9 @@ package com.mq.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +15,7 @@ import com.mq.services.CustomerService;
 
 @Component
 @Controller
+@CrossOrigin("*")
 public class CustomerController {
 	
 	@Autowired
@@ -22,6 +25,14 @@ public class CustomerController {
 	@ResponseBody
 	public Customer getCustomerbyId(@PathVariable int cid) {
 		return this.cs.getCustomerById(cid);
+	}
+	
+	@RequestMapping(value = "/customers", method = RequestMethod.PUT)
+	@ResponseBody
+	public Customer updateCustomerPoints(@RequestBody Customer customer) {
+		Customer updatedCustomer = cs.getCustomerById(customer.getcId());
+		updatedCustomer.setPoints(customer.getPoints());
+		return this.cs.updateCustomer(updatedCustomer);
 	}
 	
 }

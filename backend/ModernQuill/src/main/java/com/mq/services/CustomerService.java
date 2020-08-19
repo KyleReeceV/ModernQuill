@@ -6,4 +6,5 @@ public interface CustomerService {
 
 	Customer getCustomerById(int id);
 	Customer getCustomerByEmail(String email);
+	Customer updateCustomer(Customer customer);
 }
