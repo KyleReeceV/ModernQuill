@@ -35,7 +35,7 @@ public class LoginController {
 		}catch(Exception e) {
 			cust = null;
 		}
-		return cust;
+		return null;
 	}
 	
 }
