@@ -4,20 +4,22 @@
     background: #2193b0; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: black;
+    text-align: center;
     display:  inline-block;
     border: 2px solid black;
     border-radius: 15px;
 
 }
 
-#detailsdialog {
+.details {
     padding-top: 3px;
     font-size: 115%;
     height:35px;
     text-align:center;
     width: 100%;
     color:black;
-    background: #ffffff;
+    background: linear-gradient(to left, white, grey);
     text-size-adjust: 5px;
     border-radius: 25px;
     box-shadow: 2px 5px #9c1006;
@@ -31,7 +33,12 @@
     width:250px;
     height:175px;
 }
-#test {
-    font-family: "Great Vibes", cursive;
-    text-align: center;
+.header { color: skyblue; 
+    font-family: "Great Vibes", cursive; 
+    font-size: 65px; line-height: 160px; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    /* margin-top: 40px;  */
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; 
 }

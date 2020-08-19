@@ -11,3 +11,13 @@ td, th {
     text-align: left;
     padding: 8px;
 }
+
+#header { color: skyblue; 
+    font-family: "Great Vibes", cursive; 
+    font-size: 65px; line-height: 160px; 
+    font-weight: normal; 
+    margin-bottom: 0px; 
+    /* margin-top: 40px;  */
+    text-align: center; 
+    text-shadow: 0 1px 1px #fff; 
+}
