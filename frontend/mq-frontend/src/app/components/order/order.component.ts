@@ -6,6 +6,7 @@ import { Order } from 'src/app/models/Order';
 import { OrderService } from 'src/app/services/order.service';
 import { ShopToCartService } from 'src/app/services/shop-to-cart.service';
 import { Cart } from 'src/app/models/cart';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-order',
@@ -20,6 +21,7 @@ export class OrderComponent implements OnInit {
     private orderService:OrderService,
     private stc:ShopToCartService,
     private cartService:CartService,
+    private loginService:LoginService,
     @Inject(MAT_DIALOG_DATA) public data:any ) { }
 
   ngOnInit(): void {
@@ -33,18 +35,23 @@ export class OrderComponent implements OnInit {
     let custID = this.data.custId;
     let orderTotal = this.data.cost;
 
+
     const courierCarts:Array<Cart> = this.stc.courier;
     console.log(courierCarts);
 
-    const carts:Array<Cart> = await this.cartService.createAllCartItems(courierCarts);
-    console.log(carts);
-
-    this.stc.courier = [];
-    const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
-
+    if(courierCarts.length === 0) {
+        alert("You have no items in your cart!");
+      } else if(this.loginService.currCust.points < this.data.cost) {
+        alert("You do not have sufficient points to purchase these pens!");
+      } else {
+        const carts:Array<Cart> = await this.cartService.createAllCartItems(courierCarts);
+        console.log(carts);
     
-    console.log(returnedOrder);
+        this.stc.courier = [];
+        const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
+        console.log(returnedOrder);    
+      }
 
+      
   }
-
 }
