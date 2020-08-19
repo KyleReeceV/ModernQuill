@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.mq.frontend.runner.PageRunner;
-import com.mq.frontend.util.WaitUtil;
+import com.mq.frontend.util.UtilFuncsForSeleniumTests;
 import com.mq.frontend.webpages.LoginPage;
 import com.mq.frontend.webpages.ShopPage;
 
@@ -40,7 +40,7 @@ public class LoginSteps {
 
 	@Then("^the guest should be on shop page$")
 	public void the_guest_should_be_on_shop_page() throws Throwable {
-		WaitUtil.waitWithoutExpectedConditions(driver);
+		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
 		Assert.assertEquals("Shop Page", sPage.pageheader.getText());
 	}
 }
