@@ -44,7 +44,7 @@ export class PenDialogComponent implements OnInit {
 
     let numCurCart =  await this.cartService.getLastElementId() + 1;
 
-    if(this.penQuantity <= 0) {
+    if(this.penQuantity <= 0 || this.penQuantity === undefined) {
       this.penQuantity = 1;
     }
 
