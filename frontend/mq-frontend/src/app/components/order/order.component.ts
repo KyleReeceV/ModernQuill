@@ -49,7 +49,9 @@ export class OrderComponent implements OnInit {
     
         this.stc.courier = [];
         const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
-        console.log(returnedOrder);    
+        console.log(returnedOrder); 
+        this.loginService.currCust.points -= orderTotal;   
+        this.loginService.updateCustomer(this.loginService.currCust);
       }
 
       
