@@ -65,7 +65,7 @@ class TestCartService {
 	}
 
 	@ParameterizedTest
-	@CsvSource({"1,6"})
+	@CsvSource({"1,3"})
 	void testGetAllByCartId(int cartId, int cartSize) {
 		Set<Cart> cartItems= cs.getAllCartItemsByCartId(cartId);
 		Assertions.assertEquals(cartSize, cartItems.size());

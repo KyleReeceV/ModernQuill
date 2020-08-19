@@ -45,7 +45,7 @@ class TestCartRepository {
 	}
 	
 	@ParameterizedTest
-	@CsvSource({"1,6"})
+	@CsvSource({"1,3"})
 	void getAllByCartId(int cartId, int cartSize) {
 		Set<Cart> cartItems= cr.findBycartId(cartId);
 		Assertions.assertEquals(cartSize, cartItems.size());
