@@ -14,6 +14,12 @@
                 <a mat-button [routerLink]="'/cart'"class="tab-icons"><mat-icon >shopping_cart </mat-icon>Cart </a>
             </ng-template>
         </mat-tab>
+
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a mat-button [routerLink]="'/orders'"class="tab-icons"><mat-icon >gradient </mat-icon>Orders </a>
+            </ng-template>
+        </mat-tab>
         
         <mat-tab> 
             <ng-template mat-tab-label>
@@ -23,7 +29,9 @@
 
         <mat-tab> 
             <ng-template mat-tab-label>
+            <div class="tab-icons">
                 Your available points: {{ customer.points }}
+            </div>
             </ng-template>
         </mat-tab>
     </mat-tab-group>
