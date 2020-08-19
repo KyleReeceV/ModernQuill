@@ -41,6 +41,15 @@
     height: 30px;
 }
 
+.center {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
 h1 { color: skyblue; 
     font-family: "Great Vibes", cursive; 
     font-size: 65px; line-height: 160px; 
