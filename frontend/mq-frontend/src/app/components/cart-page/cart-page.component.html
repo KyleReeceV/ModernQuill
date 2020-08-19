@@ -1,4 +1,7 @@
 <h1>Your cart:</h1>
+<div class="center">
+    <button mat-raised-button color="Accent" (click)="clearCart()">Clear Cart</button>
+</div>
 
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let cart of carts">
