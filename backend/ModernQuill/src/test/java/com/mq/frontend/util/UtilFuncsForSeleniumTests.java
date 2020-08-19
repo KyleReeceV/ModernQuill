@@ -1,16 +1,16 @@
 package com.mq.frontend.util;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.mq.frontend.runner.PageRunner;
+
 public class UtilFuncsForSeleniumTests {
 
-	private static WebDriverWait wait; 
+	private static WebDriverWait wait = PageRunner.wait; 
 	
-	public static void waitWithoutExpectedConditions(WebDriver driver) {
-		wait= new WebDriverWait(driver, 2);
+	public static void waitWithoutExpectedConditions() {
 		
 		//code below will force selenium to wait without expected condition specified	
 		try {
@@ -21,13 +21,11 @@ public class UtilFuncsForSeleniumTests {
 	}
 	
 	
-	public static boolean isAlertPresent (WebDriver driver) {
-		wait= new WebDriverWait(driver, 2);
-		
-		if(wait.until(ExpectedConditions.alertIsPresent())==null)
-		    return false;
-		else
+	public static boolean isAlertPresent () {
+		if (wait.until(ExpectedConditions.alertIsPresent())!=null)
 			return true;
+		return false;
+
 	}
 	
 	

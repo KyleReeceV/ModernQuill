@@ -40,7 +40,38 @@ public class LoginSteps {
 
 	@Then("^the guest should be on shop page$")
 	public void the_guest_should_be_on_shop_page() throws Throwable {
-		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
+		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 		Assert.assertEquals("Shop Page", sPage.pageheader.getText());
 	}
+	
+	
+	@When("^the guest enters their wrong email$")
+	public void the_guest_enters_their_wrong_email() throws Throwable {
+		loginPage.username.sendKeys("kshflksdfsjl");
+	}
+
+	@When("^the guest enters their wrong password$")
+	public void the_guest_enters_their_wrong_password() throws Throwable {
+		loginPage.password.sendKeys("sakljdflsdjflsdjfls");
+	}
+	
+	@Then("^an alert pops up telling user that credentials are wrong\\.$")
+	public void an_alert_pops_up_telling_user_that_credentials_are_wrong() throws Throwable {
+	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
+	    Assert.assertEquals("Modern Quill", loginPage.loginPageHeader.getText());
+	    
+	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
