@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
 })
 export class ShopPageComponent implements OnInit {
 
+  selected;
+
+
   constructor(private matDialog:MatDialog,
               private penService:PenService, 
               private loginService:LoginService, 
@@ -33,7 +36,15 @@ export class ShopPageComponent implements OnInit {
   curCustomer:Customer;
 
   async displayPens():Promise<void>{
+    if(this.selected === "ascending"){
+      this.pens = await this.penService.getAllPensSort(true);
+    }
+    else if(this.selected === "descending"){
+      this.pens = await this.penService.getAllPensSort(false);
+    }
+    else{
       this.pens = await this.penService.getAllPens();
+    }
   };
 
   openDialog(id:Number) {
