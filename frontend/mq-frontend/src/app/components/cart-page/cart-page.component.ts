@@ -74,6 +74,14 @@ export class CartPageComponent implements OnInit {
     }
   }
 
+  async clearCart(){
+    this.stc.courier = [];
+    this.carts = [];
+    await this.getAllCartItemsByCartId();
+    this.custLoggedIn();
+    this.router.navigateByUrl("/cart");
+  }
+
   async openDialog() {
     const dialogConfig = new MatDialogConfig();
     let cartID = await this.cartService.getLastElementId() + 1;
