@@ -27,6 +27,12 @@ export class LoginService {
     return c;
   }
 
+  async updateCustomer(customer:Customer):Promise<Customer> {
+    const c:Customer = await this.http.put<Customer>(`http://localhost:8080/customers/`, customer).toPromise();
+    this.currCust = c;
+    return c;
+  }
+
   logoutCustomer() {
     this.currCust = null;
     return this.currCust;
