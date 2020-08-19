@@ -36,14 +36,21 @@ export class OrderComponent implements OnInit {
     const courierCarts:Array<Cart> = this.stc.courier;
     console.log(courierCarts);
 
-    const carts:Array<Cart> = await this.cartService.createAllCartItems(courierCarts);
-    console.log(carts);
-
-    this.stc.courier = [];
-    const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
-
+    if(courierCarts.length === 0) {
+        alert("You have no items in your cart!");
+      } else {
+        const carts:Array<Cart> = await this.cartService.createAllCartItems(courierCarts);
+        console.log(carts);
     
-    console.log(returnedOrder);
+        this.stc.courier = [];
+        const returnedOrder:Order = await this.orderService.createOrder(new Order(0, cartID, custID, date, orderTotal));
+        console.log(returnedOrder);    
+      }
+
+
+
+
+
 
   }
 

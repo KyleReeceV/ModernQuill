@@ -1,4 +1,4 @@
-<h1 id="shopPageHeader" class="header">Shop Page</h1>
+<h1 class="header">Shop Page</h1>
 
 <br />
 <div *ngFor = "let pen of pens">
@@ -6,17 +6,14 @@
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let pen of pens">
         <mat-card class="pen-card">
-            <mat-card-header>
+            <mat-card-header class="penCardHeader">
                 <mat-card-title>{{ pen.name }} </mat-card-title>
             </mat-card-header>
             <img mat-card-image class="img" src="{{pen.image}}">
-            <mat-card-content>
-                <mat-card-actions>
-                    <button class="details" [id]="pen.pId"  (click)="openDialog( pen.pId )" mat-button>View Details</button>
-                </mat-card-actions>
-            </mat-card-content>
         </mat-card>
-
+        <div class="btnforpen">
+            <button class="details" [id]="pen.pId" (click)="openDialog( pen.pId )" mat-button>View Details</button>
+        </div>
     </mat-grid-tile>
 </mat-grid-list>
 

@@ -11,7 +11,7 @@
 
         <mat-form-field id="quantity-input">
             <mat-label>Enter a quantity (Will default to 1)</mat-label>
-            <input id="quantityInput" matInput required [(ngModel)]="penQuantity" type="number" />
+            <input id="quantityInput" matInput required min="1" [(ngModel)]="penQuantity" type="number" />
         </mat-form-field>
         <div id="pointcost"> 
             {{ specificPen.cost | currency }}

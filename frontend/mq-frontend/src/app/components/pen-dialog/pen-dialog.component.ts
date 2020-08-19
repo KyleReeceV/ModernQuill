@@ -44,6 +44,10 @@ export class PenDialogComponent implements OnInit {
 
     let numCurCart =  await this.cartService.getLastElementId() + 1;
 
+    if(this.penQuantity <= 0) {
+      this.penQuantity = 1;
+    }
+
     this.stc.courier.push(new Cart(numCurCart, numcId, this.specificPen.pId, this.penQuantity, this.specificPen));
 
     window.confirm("pen is added to the cart");
