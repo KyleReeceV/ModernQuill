@@ -10,10 +10,8 @@ export class PenService {
 
   constructor(private http:HttpClient) { }
 
-<<<<<<< Updated upstream
   async getAllPens():Promise<Array<Pen>> {
     const pens:Array<Pen> = await this.http.get<Array<Pen>>(`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/pens/`).toPromise();
-=======
   async getAllPensSort(ascending:boolean):Promise<Array<Pen>> {
     const pens:Array<Pen> = await this.http.get<Array<Pen>>(`http://localhost:8080/pens?ascending=${ascending}`).toPromise();
     return pens;
@@ -21,7 +19,6 @@ export class PenService {
 
   async getAllPens():Promise<Array<Pen>>{
     const pens:Array<Pen> = await this.http.get<Array<Pen>>(`http://localhost:8080/pens`).toPromise();
->>>>>>> Stashed changes
     return pens;
   }
 
