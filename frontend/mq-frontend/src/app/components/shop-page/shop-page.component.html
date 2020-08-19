@@ -1,4 +1,4 @@
-<h1 id="test">Shop Page</h1>
+<h1 id="shopPageHeader">Shop Page</h1>
 
 <br />
 <div *ngFor = "let pen of pens">
@@ -12,7 +12,7 @@
             <img mat-card-image class="img" src="{{pen.image}}">
             <mat-card-content>
                 <mat-card-actions>
-                    <button id="detailsdialog" (click)="openDialog( pen.pId )" mat-button>View Details</button>
+                    <button [id]="pen.pId"  (click)="openDialog( pen.pId )" mat-button>View Details</button>
                 </mat-card-actions>
             </mat-card-content>
         </mat-card>
