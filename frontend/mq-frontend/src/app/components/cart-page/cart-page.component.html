@@ -1,4 +1,4 @@
-<h1>Your cart:</h1>
+<h1 id="cartPageHeader">Your cart:</h1>
 
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let cart of carts">
@@ -30,7 +30,7 @@
         Total Point Cost:
         <span class="pointcost">
             {{  totalCost | currency}}
-            <button mat-raised-button color="Accent" (click)="openDialog()">Confirm Order</button>
+            <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Confirm Order</button>
         </span>
     </p>
 </div>

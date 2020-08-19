@@ -8,9 +8,17 @@ Feature: submit a new order
 		When the guest enters their password
 		When the guest clicks login
 		Then the guest should be on shop page
+		
+		When the guest clicks on view details of an image
+		Then a pen dialogue pops up 
+		When the guest sets the pen quantity
+		When  the guest clicks add to cart
+		Then  a confirmation pop up will appear
 
 
 	Scenario: Submit order from cart page
 		Given the guest is on the cart page
-		When the guest clicks submit cart order
-		Then confirmation of order is displayed
+		When the guest clicks confirm order to open confirm order dialog
+		Then Another confirmation order dialog opens
+		When the customer clicks confirm order 
+		
