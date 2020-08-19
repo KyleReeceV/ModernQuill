@@ -43,6 +43,19 @@ export class CartPageComponent implements OnInit {
   async getAllCartItemsByCartId(): Promise<void>{
     const returnedCarts: Array<Cart> = this.stc.courier;
     console.log(returnedCarts);
+
+    // check for duplicate pen values
+    for (let i = 0; i < returnedCarts.length; i++) {
+      for (let j = 0; j < returnedCarts.length; j++) {
+        if (i != j) {
+          if (returnedCarts[i].pId == returnedCarts[j].pId) {
+            returnedCarts[i].quantity += returnedCarts[j].quantity;   
+            returnedCarts.splice(j);
+          }
+        }
+      }
+    }
+
     let cost:number = 0;
 
     for(let i = 0; i < returnedCarts.length; i++) {
@@ -64,7 +77,7 @@ export class CartPageComponent implements OnInit {
   async openDialog() {
     const dialogConfig = new MatDialogConfig();
     let cartID = await this.cartService.getLastElementId() + 1;
-    dialogConfig.data = {cost: this.totalCost, cartId: cartID, custId: 1};
+    dialogConfig.data = {cost: this.totalCost, cartId: cartID, custId: this.loginService.currCust.cId};
     this.matDialog.open(OrderComponent, dialogConfig);
   }
 }
