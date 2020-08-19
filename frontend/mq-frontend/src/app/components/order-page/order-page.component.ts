@@ -4,10 +4,6 @@ import {OrderService} from '../../services/order.service';
 import { Customer } from 'src/app/models/customer';
 import { LoginService } from 'src/app/services/login.service';
 
-
-
-
-
 @Component({
   selector: 'app-order-page',
   templateUrl: './order-page.component.html',
@@ -36,6 +32,7 @@ export class OrderPageComponent implements OnInit {
 
   async getCustomerOrders(cust:number): Promise<void>{
     this.orders  = await this.os.getAllOrdersByCustomerId(cust);
+    console.log(this.orders);
   }
 
 }

@@ -4,11 +4,10 @@ table {
     width: 65%;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  td, th {
+}
+
+td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-  }
-  
+}

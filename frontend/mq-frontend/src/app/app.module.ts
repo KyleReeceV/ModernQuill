@@ -29,7 +29,8 @@ import { DatePipe } from '@angular/common';
 import { LogoutComponent } from './components/logout/logout.component';
 import { NavigtationBarComponent } from './components/navigtation-bar/navigtation-bar.component';
 import { OrderComponent } from './components/order/order.component';
-import { OrderPageComponent } from '../app/components/order-page/order-page.component';
+import { OrderPageComponent } from './components/order-page/order-page.component';
+import { ShopToCartService } from 'src/app/services/shop-to-cart.service'
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { OrderPageComponent } from '../app/components/order-page/order-page.comp
     MatSidenavModule,
     MatListModule
   ],
-  providers: [ PenService , DatePipe],
+  providers: [ PenService , DatePipe, ShopToCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

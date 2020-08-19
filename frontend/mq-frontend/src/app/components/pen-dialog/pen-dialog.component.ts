@@ -4,6 +4,7 @@ import { Pen } from '../../models/pen'
 import { PenService } from 'src/app/services/pen.service';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/models/cart';
+import { ShopToCartService } from 'src/app/services/shop-to-cart.service'
 
 
 @Component({
@@ -17,11 +18,11 @@ export class PenDialogComponent implements OnInit {
     public dialogRef:MatDialogRef<PenDialogComponent>,
     private penService:PenService,
     private cartService:CartService,
+    private stc:ShopToCartService,
     @Inject(MAT_DIALOG_DATA) public data:any ) { }
 
   specificPen:Pen;
-  penQuantity:number;
-  
+  penQuantity:number;  
 
   ngOnInit(): void {
     this.getPenDetails(this.data);
@@ -41,12 +42,9 @@ export class PenDialogComponent implements OnInit {
     let strcId = localStorage.getItem('customer')
     let numcId = parseInt(strcId);
 
-    let numCurCart = parseInt(localStorage.getItem('nCartID'));
+    let numCurCart =  await this.cartService.getLastElementId() + 1;
 
-    let cartArray:Array<Cart> = new Array<Cart>();
-    cartArray.push(new Cart(numCurCart, numcId, this.specificPen.pId, this.penQuantity, this.specificPen));
-
-    const returnedCart = await this.cartService.createAllCartItems(cartArray);
+    this.stc.courier.push(new Cart(numCurCart, numcId, this.specificPen.pId, this.penQuantity, this.specificPen));
   }
 
 }

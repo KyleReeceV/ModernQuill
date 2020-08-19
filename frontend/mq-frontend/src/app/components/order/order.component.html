@@ -7,5 +7,5 @@
         so feel free to place an order with ease!
     </p>
 
-    <button mat-raised-button color="Accent" (click)="placeOrder()">Confirm Order</button>
+    <button mat-raised-button color="Accent" [mat-dialog-close]="true" (click)="placeOrder()">Confirm Order</button>
 </div>

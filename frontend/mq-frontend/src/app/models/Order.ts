@@ -1,5 +1,3 @@
-
-
 export class Order{
     oId         : number = 0;
     cartId      : number;

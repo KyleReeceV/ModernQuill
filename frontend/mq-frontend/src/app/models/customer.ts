@@ -1,18 +1,18 @@
 export class Customer{
     cId:number;
-    firstname:string;
-    lastname:string;
+    fname:string;
+    lname:string;
     email:string;
     password:string;
     points:number;
     address:string;
 
-    constructor(cId:number, firstname:string, lastname:string, points:number, address:string, email:string, password:string){
+    constructor(cId:number, fname:string, lname:string, points:number, address:string, email:string, password:string){
         this.email = email;
         this.password = password;
         this.cId = cId;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.fname = fname;
+        this.lname = lname;
         this.points = points;
         this.address = address;
     }

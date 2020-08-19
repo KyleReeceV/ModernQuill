@@ -24,7 +24,10 @@ export class NavigtationBarComponent implements OnInit {
     if(!this.loginService.isLoggedIn()) {
       return false;
     } else {
+      this.customer = this.loginService.currCust;
+      //console.log(this.customer);
       return true;
+      
     }
   }
 }
