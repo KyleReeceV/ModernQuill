@@ -24,7 +24,7 @@ export class LoginPageComponent implements OnInit {
     let customer = await this.loginService.loginUser(dto);
     console.log(customer)
     if (customer === null){
-      alert("user not found")
+      window.alert("user not found");
       this.userField="";
       this.passField="";
       this.router.navigateByUrl("/login");

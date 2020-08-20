@@ -7,8 +7,6 @@ import com.mq.frontend.runner.PageRunner;
 import com.mq.frontend.util.UtilFuncsForSeleniumTests;
 import com.mq.frontend.webpages.ShopPage;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -25,7 +23,7 @@ public class ShopSteps {
 	
 	@Then("^a pen dialogue pops up$")
 	public void a_pen_dialogue_pops_up() throws Throwable{
-		 UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
+		 UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 		 Assert.assertTrue(sPage.penDialogueHeader.getText()!="");
 	}
 
@@ -41,7 +39,7 @@ public class ShopSteps {
 
 	@Then("^a confirmation pop up will appear$")
 	public void a_confirmation_pop_up_will_appear() throws Throwable {
-	   Assert.assertTrue(UtilFuncsForSeleniumTests.isAlertPresent(driver));
+	   Assert.assertTrue(UtilFuncsForSeleniumTests.isAlertPresent());
 	   driver.switchTo().alert().dismiss();
 	}
 }

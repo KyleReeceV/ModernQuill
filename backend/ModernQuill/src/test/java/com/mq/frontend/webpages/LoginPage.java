@@ -14,6 +14,9 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(id="loginPageHeader")
+	public WebElement loginPageHeader;
+	
 	@FindBy(id = "usernameInput")
 	public WebElement username;
 	

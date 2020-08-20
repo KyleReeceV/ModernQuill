@@ -21,7 +21,7 @@ public class CartSteps {
 	@Given("^the guest is on the cart page$")
 	public void the_guest_is_on_the_cart_page() throws Throwable {
 	    cPage.cartNavBar.click();
-		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
+		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 		Assert.assertEquals("Your cart:", cPage.pageHeader.getText());
 	}
 
@@ -32,7 +32,7 @@ public class CartSteps {
 
 	@Then("^Another confirmation order dialog opens$")
 	public void another_confirmation_order_dialog_opens() throws Throwable {
-	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
+	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	    Assert.assertEquals("Order Confirmation", cPage.placeOrderDialog.getText());
 	    
 	}
@@ -40,7 +40,7 @@ public class CartSteps {
 	@When("^the customer clicks confirm order$")
 	public void the_customer_clicks_confirm_order() throws Throwable {
 	    cPage.placeOrderBtn.click();
-	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions(driver);
+	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	}
 
 
