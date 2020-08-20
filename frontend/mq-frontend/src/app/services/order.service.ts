@@ -31,21 +31,21 @@ export class OrderService {
 
 
   async createOrder (order: Order): Promise<Order>{
-  const orderReturned:Order = await this.http.post<Order>(`http://localhost:8080/orders`, order).toPromise();
+  const orderReturned:Order = await this.http.post<Order>(`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/orders`, order).toPromise();
   return orderReturned;
 }
 
 async getOrderById (orderId: number): Promise<Order>{
 
   const orderReturned:Order = await this.http.get<Order>
-    (`http://localhost:8080/orders/${orderId}`).toPromise();
+    (`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/orders/${orderId}`).toPromise();
   return orderReturned;
 }
 
 async getAllOrdersByCustomerId (customerId: number): Promise<Array<Order>>{
 
   const ordersReturned:Array<Order> = await this.http.get<Array<Order>>
-    (`http://localhost:8080//customers/${customerId}/orders`).toPromise();
+    (`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080//customers/${customerId}/orders`).toPromise();
   return ordersReturned;
 }
 
