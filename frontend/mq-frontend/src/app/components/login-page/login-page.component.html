@@ -23,5 +23,22 @@
             <mat-slider thumbLabel tickInterval="1" min="1" max="10" step="1" value="1"></mat-slider>
         </div>
         <button mat-raised-button color="accent" (click)="loginCust()" id = "loginButton" style = "display: block; margin: auto;"> Login </button>
+
+
+        <div id="popup1" *ngIf='showPopUp'>
+            <div class="popup">
+                <a   class="close" (click)="closePopUp()"  href="#">&times;</a>
+                <div class="content">
+                    Thank to pop me out of that button, but now i'm done so you can close this window.
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
     </body>
 </html>

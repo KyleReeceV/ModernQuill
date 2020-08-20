@@ -47,10 +47,11 @@ export class PenDialogComponent implements OnInit {
     if(this.penQuantity <= 0 || this.penQuantity === undefined) {
       this.penQuantity = 1;
     }
-
+    console.log(1);
     this.stc.courier.push(new Cart(numCurCart, numcId, this.specificPen.pId, this.penQuantity, this.specificPen));
-
+    console.log(2);
     window.confirm("pen is added to the cart");
+    console.log(3);
   }
 
 

@@ -16,6 +16,5 @@ Feature: add pen to cart
 		When  the guest clicks add to cart
 		Then  a confirmation pop up will appear
 		
-		
-		
+	Scenario: Order pages by 
 		
