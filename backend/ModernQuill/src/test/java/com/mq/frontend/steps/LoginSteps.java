@@ -55,11 +55,10 @@ public class LoginSteps {
 		loginPage.password.sendKeys("sakljdflsdjflsdjfls");
 	}
 	
-	@Then("^an alert pops up telling user that credentials are wrong\\.$")
+	@Then("^an alert pops up telling user that credentials are wrong$")
 	public void an_alert_pops_up_telling_user_that_credentials_are_wrong() throws Throwable {
 	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	    Assert.assertEquals("Modern Quill", loginPage.loginPageHeader.getText());
-	    
 	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	}
 

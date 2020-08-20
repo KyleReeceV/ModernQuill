@@ -7,6 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.GeckoDriverInfo;
+import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.mq.frontend.webpages.CartPage;
@@ -34,10 +37,10 @@ public class PageRunner {
 	
 	@BeforeClass
 	public static void setUp() {
-		File file = new File("src/test/resources/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());	
+		File file = new File("src/test/resources/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());	
 		
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		wait = new WebDriverWait(driver,2);
 		
 		

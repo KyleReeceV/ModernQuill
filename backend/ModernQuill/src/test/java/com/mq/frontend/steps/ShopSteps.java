@@ -18,6 +18,7 @@ public class ShopSteps {
 
 	@When("^the guest clicks on view details of an image$")
 	public void the_guest_clicks_on_view_details_of_an_image() throws Throwable {
+		UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	    sPage.penDialogButton.click();
 	}
 	
