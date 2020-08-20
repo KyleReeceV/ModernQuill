@@ -33,6 +33,9 @@ public class ShopPage {
 	@FindBy(id="cartbtn")
 	public WebElement addToCartBtn;
 	
+	@FindBy( id="penAddedToCart")
+	public WebElement penAddedAlert;
+	
 	
 	
 	

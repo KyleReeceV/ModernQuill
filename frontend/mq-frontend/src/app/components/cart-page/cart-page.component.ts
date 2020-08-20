@@ -67,10 +67,10 @@ export class CartPageComponent implements OnInit {
     this.totalCost = cost;
   }
 
-  custLoggedIn(){
-    if(!this.loginService.isLoggedIn()) {
-      alert("You must be logged in to view this page!");
-      this.router.navigateByUrl("/login");
+  async custLoggedIn(){
+    let customer = await this.loginService.getCustomerById(parseInt(localStorage.getItem('customer')));
+    if (customer === null || customer === undefined) {
+      this.router.navigateByUrl('/login');
     }
   }
 

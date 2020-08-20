@@ -30,7 +30,11 @@ public class CartPage {
 	@FindBy(id="placeOrder")
 	public WebElement placeOrderBtn;
 	
+	@FindBy(id="clearCart")
+	public WebElement clearCartBtn;
 	
+	@FindBy(id="finalCost")
+	public WebElement finalCost;
 	
 	
 	

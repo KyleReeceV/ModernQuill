@@ -31,7 +31,10 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NavigtationBarComponent } from './components/navigtation-bar/navigtation-bar.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderPageComponent } from './components/order-page/order-page.component';
-import { ShopToCartService } from 'src/app/services/shop-to-cart.service'
+import { ShopToCartService } from 'src/app/services/shop-to-cart.service';
+import {PenDialogToShopService} from 'src/app/services/pen-dialog-to-shop.service';
+import {LoginService} from 'src/app/services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +69,7 @@ import { ShopToCartService } from 'src/app/services/shop-to-cart.service'
     MatListModule,
     MatSelectModule
   ],
-  providers: [ PenService , DatePipe, ShopToCartService],
+  providers: [ PenService , DatePipe, ShopToCartService, PenDialogToShopService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

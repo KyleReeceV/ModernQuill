@@ -23,7 +23,6 @@ public class UtilFuncsForSeleniumTests {
 		}
 	}
 	
-	
 	public static boolean isAlertPresent () {
 		if (wait.until(ExpectedConditions.alertIsPresent())!=null)
 			return true;

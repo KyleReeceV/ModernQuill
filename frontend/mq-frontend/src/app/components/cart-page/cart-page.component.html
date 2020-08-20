@@ -13,7 +13,7 @@
                 Individual Pen Cost (Quantity x $Point Cost):
                 <br />
 
-                <div class="pointcost"> 
+                <div class="pointcost" > 
                     {{ (cart.quantity * cart.pen.cost) | currency }}
                 </div>
                 
@@ -29,10 +29,12 @@
     <p id="carttotaltext">
         Total Point Cost:
         <span class="pointcost">
+            <span id="finalCost">
             {{  totalCost | currency}}
+            </span>
             <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Confirm Order</button>
             - OR -
-            <button mat-raised-button color="Accent" (click)="clearCart()">Clear Cart</button>
+            <button mat-raised-button color="Accent" id="clearCart" (click)="clearCart()">Clear Cart</button>
         </span>
     </p>
 </div>
