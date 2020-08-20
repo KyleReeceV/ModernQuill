@@ -25,11 +25,12 @@
         <button mat-raised-button color="accent" (click)="loginCust()" id = "loginButton" style = "display: block; margin: auto;"> Login </button>
 
 
-        <div id="popup1" *ngIf='showPopUp'>
-            <div class="popup">
-                <a   class="close" (click)="closePopUp()"  href="#">&times;</a>
+        <div *ngIf='showPopUp'>
+            <div class="popup"  id="wrongCredentialsPopup">
+                <a  class="close" (click)="closePopUp()"  href="#">&times;</a>
+                <br><br>
                 <div class="content">
-                    Thank to pop me out of that button, but now i'm done so you can close this window.
+                    Thank you for popping me out, but your credentials are wrong, no pens for you.
                 </div>
             </div>
         </div>

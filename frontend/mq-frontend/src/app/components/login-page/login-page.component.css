@@ -1,39 +1,35 @@
 body {
-  background: #ff9966;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ff9966, #ff5e62);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ff9966, #ff5e62);
-  text-align: center;
+    background: #ff9966;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9966, #ff5e62);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    text-align: center;
 }
 
 
 
 .example-form {
-  display: inline-block;
-  max-width: 500px;
-
+    display: inline-block;
+    max-width: 500px;
+    
 }
 
 .example-full-width {
-  width: 100%;
+    width: 100%;
 }
 
 h1 {
-  color: skyblue;
-  font-family: "Great Vibes", cursive;
-  font-size: 65px;
-  line-height: 160px;
-  font-weight: normal;
-  margin-bottom: 0px;
-  /* margin-top: 40px;  */
-  text-align: center;
-  text-shadow: 0 1px 1px #fff;
+    color: skyblue;
+    font-family: "Great Vibes", cursive;
+    font-size: 65px;
+    line-height: 160px;
+    font-weight: normal;
+    margin-bottom: 0px;
+    /* margin-top: 40px;  */
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
 }
-
-
-
-
 
 
 /* Ismael Popup*/
@@ -79,7 +75,7 @@ h1 {
     .box {
         width: 70%;
     }
-
+    
     .popup {
         width: 70%;
     }

@@ -26,5 +26,8 @@ public class LoginPage {
 	@FindBy(id= "loginButton")
 	public WebElement loginButton;
 	
+	@FindBy(id="wrongCredentialsPopup")
+	public WebElement wrongCredentialsPopup;
+	
 	
 }
