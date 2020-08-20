@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from  '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule, MatList} from '@angular/material/list'
+import {MatSelectModule} from '@angular/material/select'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,7 +63,8 @@ import { ShopToCartService } from 'src/app/services/shop-to-cart.service'
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule
   ],
   providers: [ PenService , DatePipe, ShopToCartService],
   bootstrap: [AppComponent]

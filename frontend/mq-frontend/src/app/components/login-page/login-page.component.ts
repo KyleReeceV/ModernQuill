@@ -15,6 +15,9 @@ export class LoginPageComponent implements OnInit {
   userField:string;
   passField:string;
 
+  //popup field for ngIf
+  showPopUp: boolean=false;
+
   ngOnInit(): void {
   }
 
@@ -24,10 +27,11 @@ export class LoginPageComponent implements OnInit {
     let customer = await this.loginService.loginUser(dto);
     console.log(customer)
     if (customer === null){
-      alert("user not found")
+      //window.confirm("user not found");
+      this.showPopUp=true;
       this.userField="";
       this.passField="";
-      this.router.navigateByUrl("/login");
+      //this.router.navigateByUrl("/login");
       
     }
     else{
@@ -35,7 +39,10 @@ export class LoginPageComponent implements OnInit {
       this.loginService.setCustomer(customer);
     }
 
+  }
 
+  closePopUp():void{
+    this.showPopUp=false;
   }
 
 }

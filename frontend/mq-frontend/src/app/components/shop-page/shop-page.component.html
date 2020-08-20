@@ -1,8 +1,17 @@
 <h1 id="shopPageHeader" class="header">Shop Page</h1>
 
-<br />
-<div *ngFor = "let pen of pens">
+<div id="sorter">
+    <mat-form-field appearance="fill">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selected" (valueChange)="displayPens()" >
+          <mat-option id="bestSellers" value="best sellers" >Best Sellers</mat-option>
+          <mat-option id="asc" value="ascending" >Price: Low to High</mat-option>
+          <mat-option id="desc" value="descending">Price: High to Low</mat-option>
+        </mat-select>
+      </mat-form-field>            
 </div>
+
+
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let pen of pens">
         <mat-card class="pen-card">
@@ -16,13 +25,3 @@
         </div>
     </mat-grid-tile>
 </mat-grid-list>
-
-
-<!-- 
-<tr *ngFor = "let pen of pens">
-    <td> {{ pen.id }} </td>
-    <td>{{ pen.description }}</td>
-    <td> {{ pen.name }}</td>
-    <td> {{ pen.cost }}</td>
-    <td> {{ pen.image }}</td>
-</tr> -->

@@ -5,7 +5,7 @@
     <link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
 </head>
     <body>
-        <h1 style="text-align:center;">Modern Quill</h1>
+        <h1 id= "loginPageHeader" style="text-align:center;">Modern Quill</h1>
         
         <form class="example-form" style = "display: fixed; margin: auto;" (keyup.enter)="loginCust()">
             <mat-form-field class="example-full-width">
@@ -23,5 +23,23 @@
             <mat-slider thumbLabel tickInterval="1" min="1" max="10" step="1" value="1"></mat-slider>
         </div>
         <button mat-raised-button color="accent" (click)="loginCust()" id = "loginButton" style = "display: block; margin: auto;"> Login </button>
+
+
+        <div *ngIf='showPopUp'>
+            <div class="popup"  id="wrongCredentialsPopup">
+                <a  class="close" (click)="closePopUp()"  href="#">&times;</a>
+                <br><br>
+                <div class="content">
+                    Thank you for popping me out, but your credentials are wrong, no pens for you.
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
     </body>
 </html>
