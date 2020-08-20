@@ -13,7 +13,7 @@ export class LoginService {
   currCust:Customer;
 
   async loginUser(dto):Promise<Customer>{
-    const cust:Customer = await this.http.post<Customer>("http://localhost:8080/login",dto).toPromise();
+    const cust:Customer = await this.http.post<Customer>("http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/login",dto).toPromise();
     return cust;
   }
 
@@ -23,12 +23,12 @@ export class LoginService {
   }
 
   async getCustomerById(id:number):Promise<Customer> {
-    const c:Customer = await this.http.get<Customer>(`http://localhost:8080/customers/${id}`).toPromise();
+    const c:Customer = await this.http.get<Customer>(`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/customers/${id}`).toPromise();
     return c;
   }
 
   async updateCustomer(customer:Customer):Promise<Customer> {
-    const c:Customer = await this.http.put<Customer>(`http://localhost:8080/customers/`, customer).toPromise();
+    const c:Customer = await this.http.put<Customer>(`http://ec2-3-91-229-143.compute-1.amazonaws.com:8080/customers/`, customer).toPromise();
     this.currCust = c;
     return c;
   }
