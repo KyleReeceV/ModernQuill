@@ -22,3 +22,12 @@ Feature: submit a new order
 		Then Another confirmation order dialog opens
 		When the customer clicks confirm order 
 		
+		
+		
+	Scenario: add pens to cart, and clear the cart
+		
+		Given the guest is on the cart page
+		When the guest clicks clear cart
+		Then cart gets cleared 
+		
+		
