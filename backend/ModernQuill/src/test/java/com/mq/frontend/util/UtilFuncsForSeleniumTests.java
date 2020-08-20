@@ -1,6 +1,9 @@
 package com.mq.frontend.util;
 
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +29,19 @@ public class UtilFuncsForSeleniumTests {
 			return true;
 		return false;
 
+	}
+	
+
+	public static boolean isAlertPresent(WebElement e) {
+		
+		try {
+			if (e.isDisplayed())	
+				return true;
+			return false;
+		} catch(org.openqa.selenium.NoSuchElementException ex) {
+			return false;
+		}
+		
 	}
 	
 	

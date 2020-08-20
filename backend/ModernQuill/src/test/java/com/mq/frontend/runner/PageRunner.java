@@ -41,7 +41,7 @@ public class PageRunner {
 		System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());	
 		
 		driver = new FirefoxDriver();
-		wait = new WebDriverWait(driver,2);
+		wait = new WebDriverWait(driver,5);
 		
 		
 		cPage = new CartPage(driver);	
