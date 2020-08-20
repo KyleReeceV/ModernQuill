@@ -1,7 +1,4 @@
 <h1 id="cartPageHeader">Your cart:</h1>
-<div class="center">
-    <button mat-raised-button color="Accent" (click)="clearCart()">Clear Cart</button>
-</div>
 
 <mat-grid-list cols="3">
     <mat-grid-tile *ngFor = "let cart of carts">
@@ -34,6 +31,8 @@
         <span class="pointcost">
             {{  totalCost | currency}}
             <button mat-raised-button color="Accent" id="openConfirmOrderDialog" (click)="openDialog()">Confirm Order</button>
+            - OR -
+            <button mat-raised-button color="Accent" (click)="clearCart()">Clear Cart</button>
         </span>
     </p>
 </div>

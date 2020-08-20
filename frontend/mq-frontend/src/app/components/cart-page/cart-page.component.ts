@@ -24,8 +24,8 @@ export class CartPageComponent implements OnInit {
               private matDialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.getAllCartItemsByCartId();
     this.custLoggedIn();
+    this.getAllCartItemsByCartId();
   }
 
   carts:Array<Cart> = [];
