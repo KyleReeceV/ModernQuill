@@ -42,6 +42,17 @@ public class CartSteps {
 	    cPage.placeOrderBtn.click();
 	    UtilFuncsForSeleniumTests.waitWithoutExpectedConditions();
 	}
+	
+	
+	@When("^the guest clicks clear cart$")
+	public void the_guest_clicks_clear_cart() throws Throwable {
+	   cPage.clearCartBtn.click();
+	}
+
+	@Then("^cart gets cleared$")
+	public void cart_gets_cleared() throws Throwable {
+	    Assert.assertEquals("$0.00", cPage.finalCost.getText());
+	}
 
 
 }

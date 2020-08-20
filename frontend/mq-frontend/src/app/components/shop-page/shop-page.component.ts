@@ -22,7 +22,7 @@ export class ShopPageComponent implements OnInit {
   constructor(private matDialog:MatDialog,
               private penService:PenService, 
               private loginService:LoginService, 
-              private cartService:CartService,
+
               private router:Router) { }
 
   ngOnInit(): void {
